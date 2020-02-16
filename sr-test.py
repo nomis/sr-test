@@ -165,6 +165,7 @@ if __name__ == "__main__":
 	devices = list(sorted([os.path.realpath(sr) for sr in glob.glob("/sys/class/block/sr*")]))
 
 	parser = argparse.ArgumentParser(description="sr tester")
+	parser.add_argument("-s", "--sequential", action="store_true", help="Run sequentially")
 	parser.add_argument("-e", "--eject", action="store_true", help="Eject all non-USB drives")
 	parser.add_argument("-u", "--eject-usb", action="store_true", help="Eject all USB drives")
 	parser.add_argument("-c", "--close", action="store_true", help="Close all non-USB drive trays")
@@ -174,7 +175,7 @@ if __name__ == "__main__":
 
 	args = parser.parse_args()
 
-	with mp.Pool(initializer=init, initargs=(lock,), processes=len(devices)) as pool:
+	with mp.Pool(initializer=init, initargs=(lock,), processes=1 if args.sequential else len(devices)) as pool:
 		uprint("** Devices:")
 		for device in devices:
 			device_info(device)
