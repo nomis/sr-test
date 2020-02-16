@@ -25,6 +25,43 @@ def lprint(*args, **kwargs):
 def device_info(device):
 	uprint(f"** {device}")
 
+	parts = device.split("/")
+	drivers = []
+	for n in range(4, len(parts) + 1):
+		base = os.path.join("/", *parts[0:n])
+
+		driver = None
+		try:
+			driver = os.path.basename(os.readlink(os.path.join(base, "driver")))
+		except FileNotFoundError:
+			continue
+
+		vendor = None
+		product = None
+		try:
+			with open(os.path.join(base, "vendor"), "r") as f:
+				vendor = f.read().strip().replace("0x", "")
+			with open(os.path.join(base, "device"), "r") as f:
+				product = f.read().strip().replace("0x", "")
+		except FileNotFoundError:
+			pass
+
+		try:
+			with open(os.path.join(base, "idVendor"), "r") as f:
+				vendor = f.read().strip().replace("0x", "")
+			with open(os.path.join(base, "idProduct"), "r") as f:
+				product = f.read().strip().replace("0x", "")
+		except FileNotFoundError:
+			pass
+
+		if vendor and product:
+			driver = f"{driver}[{vendor}:{product}]"
+
+		drivers.append(driver)
+
+	drivers = "/".join(drivers)
+	uprint(f"-- {drivers}")
+
 def tray_eject(device):
 	name = "/dev/" + device.split("/")[-1]
 	uprint(f"== Tray ejecting on {name}")
