@@ -24,6 +24,7 @@ import os
 
 CDROMEJECT = 0x5309
 CDROMCLOSETRAY = 0x5319
+CDROM_LOCKDOOR = 0x5329
 
 def init(lock_):
 	global lock
@@ -116,6 +117,44 @@ def tray_close(device):
 	stop = datetime.now()
 	uprint(f"== Tray closed on {name}, {ret} ({stop - start})")
 
+def door_lock(device):
+	name = "/dev/" + device.split("/")[-1]
+	uprint(f"== Door locking on {name}")
+	start = datetime.now()
+
+	uprint(f"-- Opening {name}")
+	fd = os.open(name, os.O_RDONLY | os.O_NONBLOCK)
+	uprint(f"-- Opened {name}")
+	try:
+		ret = fcntl.ioctl(fd, CDROM_LOCKDOOR, 1)
+	except OSError as e:
+		ret = e
+	uprint(f"-- Closing {name}")
+	os.close(fd)
+	uprint(f"-- Closed {name}")
+
+	stop = datetime.now()
+	uprint(f"== Door locked on {name}, {ret} ({stop - start})")
+
+def door_unlock(device):
+	name = "/dev/" + device.split("/")[-1]
+	uprint(f"== Door unlocking on {name}")
+	start = datetime.now()
+
+	uprint(f"-- Opening {name}")
+	fd = os.open(name, os.O_RDONLY | os.O_NONBLOCK)
+	uprint(f"-- Opened {name}")
+	try:
+		ret = fcntl.ioctl(fd, CDROM_LOCKDOOR, 0)
+	except OSError as e:
+		ret = e
+	uprint(f"-- Closing {name}")
+	os.close(fd)
+	uprint(f"-- Closed {name}")
+
+	stop = datetime.now()
+	uprint(f"== Door unlocked on {name}, {ret} ({stop - start})")
+
 def is_usb(device):
 	return "/usb" in device
 
@@ -130,6 +169,8 @@ if __name__ == "__main__":
 	parser.add_argument("-u", "--eject-usb", action="store_true", help="Eject all USB drives")
 	parser.add_argument("-c", "--close", action="store_true", help="Close all non-USB drive trays")
 	parser.add_argument("-t", "--close-usb", action="store_true", help="Close all USB drive trays")
+	parser.add_argument("-L", "--lock", action="store_true", help="Lock all drive doors")
+	parser.add_argument("-U", "--unlock", action="store_true", help="Unlock all drive doors")
 
 	args = parser.parse_args()
 
@@ -139,8 +180,14 @@ if __name__ == "__main__":
 			device_info(device)
 		uprint()
 
+		if args.unlock:
+			pool.map(door_unlock, devices)
+
 		if args.eject or args.eject_usb:
 			pool.map(tray_eject, list(filter(lambda device: (args.eject and not is_usb(device)) or (args.eject_usb and is_usb(device)), devices)))
 
 		if args.close or args.close_usb:
 			pool.map(tray_close, list(filter(lambda device: (args.close and not is_usb(device)) or (args.close_usb and is_usb(device)), devices)))
+
+		if args.lock:
+			pool.map(door_lock, devices)
