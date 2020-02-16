@@ -23,7 +23,7 @@ def lprint(*args, **kwargs):
 		print(now, *args, **kwargs)
 
 def device_info(device):
-	uprint(device)
+	uprint(f"** {device}")
 
 def tray_eject(device):
 	name = "/dev/" + device.split("/")[-1]
@@ -81,15 +81,13 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 
 	with mp.Pool(initializer=init, initargs=(lock,), processes=len(devices)) as pool:
-		lprint("Devices:")
+		uprint("** Devices:")
 		for device in devices:
 			device_info(device)
-		lprint()
+		uprint()
 
 		if args.eject or args.eject_usb:
-			eject_devices = list(filter(lambda device: (args.eject and not is_usb(device)) or (args.eject_usb and is_usb(device)), devices))
-			pool.map(tray_eject, eject_devices)
+			pool.map(tray_eject, list(filter(lambda device: (args.eject and not is_usb(device)) or (args.eject_usb and is_usb(device)), devices)))
 
 		if args.close or args.close_usb:
-			close_devices = list(filter(lambda device: (args.close and not is_usb(device)) or (args.close_usb and is_usb(device)), devices))
-			pool.map(tray_close, close_devices)
+			pool.map(tray_close, list(filter(lambda device: (args.close and not is_usb(device)) or (args.close_usb and is_usb(device)), devices)))
