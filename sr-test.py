@@ -39,9 +39,7 @@ def lprint(*args, **kwargs):
 	with lock:
 		print(now, *args, **kwargs)
 
-def device_info(device):
-	uprint(f"** {device}")
-
+def device_drivers(device):
 	parts = device.split("/")
 	drivers = []
 	for n in range(4, len(parts) + 1):
@@ -76,7 +74,12 @@ def device_info(device):
 
 		drivers.append(driver)
 
-	drivers = "/".join(drivers)
+	return drivers
+
+def device_info(device):
+	uprint(f"** {device}")
+
+	drivers = "/".join(device_drivers(device))
 	uprint(f"-- {drivers}")
 
 def tray_eject(device):
@@ -158,11 +161,40 @@ def door_unlock(device):
 def is_usb(device):
 	return "/usb" in device
 
+def is_pata(device, drivers=None):
+	if drivers is None:
+		drivers = device_drivers(device)
+	for driver in drivers:
+		if driver.startswith("pata"):
+			return True
+	return False
+
+def is_sata(device, drivers=None):
+	if drivers is None:
+		drivers = device_drivers(device)
+	for driver in drivers:
+		if driver.startswith("sata"):
+			return True
+	return False
+
+"""Order by pata (most likely to block other accesses), then sata, then usb (non-motorised tray eject)."""
+def device_sort_key(device):
+	if is_usb(device):
+		return ("usb", device)
+
+	drivers = device_drivers(device)
+	if is_pata(device, drivers):
+		return ("pata", device)
+	if is_sata(device, drivers):
+		return ("sata", device)
+
+	return (None, device)
+
 if __name__ == "__main__":
 	mp.set_start_method("forkserver")
 	lock = mp.Lock()
 
-	devices = list(sorted([os.path.realpath(sr) for sr in glob.glob("/sys/class/block/sr*")]))
+	devices = list(sorted([os.path.realpath(sr) for sr in glob.glob("/sys/class/block/sr*")], key=device_sort_key))
 
 	parser = argparse.ArgumentParser(description="sr tester")
 	parser.add_argument("-s", "--sequential", action="store_true", help="Run sequentially")
