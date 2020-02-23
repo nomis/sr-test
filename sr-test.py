@@ -15,13 +15,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from datetime import datetime
+from datetime import datetime, timedelta
 import argparse
 import fcntl
 import glob
 import multiprocessing as mp
+import pickle
 import os
 import sys
+import time
 
 CDROMEJECT = 0x5309
 CDROMCLOSETRAY = 0x5319
@@ -85,7 +87,15 @@ def device_info(device):
 	drivers = "/".join(device_drivers(device))
 	uprint(f"-- {drivers}")
 
-def tray_eject(device):
+def format_td(td):
+	if td < timedelta(0):
+		return "-" + str(-td)
+	else:
+		return "+" + str(td)
+
+def tray_eject(data):
+	(device, timings) = data
+
 	name = "/dev/" + device.split("/")[-1]
 	uprint(f"== Tray ejecting on {name}")
 	start = datetime.now()
@@ -102,9 +112,13 @@ def tray_eject(device):
 	uprint(f"-- Closed {name}")
 
 	stop = datetime.now()
-	uprint(f"== Tray ejected on {name}, 0x{ret:x} ({stop - start})")
+	reference = format_td((stop - start) - timings["eject"]) if timings else ""
+	uprint(f"== Tray ejected on {name}, 0x{ret:x} ({stop - start}) {reference}")
+	return stop - start
 
-def tray_close(device):
+def tray_close(data):
+	(device, timings) = data
+
 	name = "/dev/" + device.split("/")[-1]
 	uprint(f"== Tray closing on {name}")
 	start = datetime.now()
@@ -121,7 +135,9 @@ def tray_close(device):
 	uprint(f"-- Closed {name}")
 
 	stop = datetime.now()
-	uprint(f"== Tray closed on {name}, 0x{ret:x} ({stop - start})")
+	reference = format_td((stop - start) - timings["close"]) if timings else ""
+	uprint(f"== Tray closed on {name}, 0x{ret:x} ({stop - start}) {reference}")
+	return stop - start
 
 def door_lock(device):
 	name = "/dev/" + device.split("/")[-1]
@@ -193,6 +209,16 @@ def device_sort_key(device):
 
 	return (None, device)
 
+def reference_timings(devices):
+	timings = {}
+	for device in devices:
+		timings[device] = { "eject": tray_eject((device, None)) }
+		time.sleep(5)
+		timings[device]["close"] = tray_close((device, None))
+		time.sleep(5)
+
+	return timings
+
 if __name__ == "__main__":
 	mp.set_start_method("forkserver")
 	lock = mp.Lock()
@@ -200,6 +226,7 @@ if __name__ == "__main__":
 	devices = list(sorted([os.path.realpath(sr) for sr in glob.glob("/sys/class/block/sr*")], key=device_sort_key))
 
 	parser = argparse.ArgumentParser(description="sr tester")
+	parser.add_argument("-r", "--reference", action="store_true", help="Obtain referencing timings for tray eject/close")
 	parser.add_argument("-s", "--sequential", action="store_true", help="Run sequentially")
 	parser.add_argument("-e", "--eject", action="store_true", help="Eject all non-USB drives")
 	parser.add_argument("-u", "--eject-usb", action="store_true", help="Eject all USB drives")
@@ -219,11 +246,23 @@ if __name__ == "__main__":
 		if args.unlock:
 			pool.map(door_unlock, devices)
 
+		try:
+			with open("timings.pickle", "rb") as f:
+				timings = pickle.load(f)
+		except FileNotFoundError:
+			timings = {}
+
+		if args.reference:
+			timings = reference_timings(filter(lambda device: not is_usb(device), devices))
+
+			with open("timings.pickle", "wb") as f:
+				pickle.dump(timings, f)
+
 		if args.eject or args.eject_usb:
-			pool.map(tray_eject, list(filter(lambda device: (args.eject and not is_usb(device)) or (args.eject_usb and is_usb(device)), devices)))
+			pool.map(tray_eject, [(device, timings.get(device)) for device in list(filter(lambda device: (args.eject and not is_usb(device)) or (args.eject_usb and is_usb(device)), devices))])
 
 		if args.close or args.close_usb:
-			pool.map(tray_close, list(filter(lambda device: (args.close and not is_usb(device)) or (args.close_usb and is_usb(device)), devices)))
+			pool.map(tray_close, [(device, timings.get(device)) for device in list(filter(lambda device: (args.close and not is_usb(device)) or (args.close_usb and is_usb(device)), devices))])
 
 		if args.lock:
 			pool.map(door_lock, devices)
