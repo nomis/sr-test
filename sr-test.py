@@ -21,6 +21,7 @@ import fcntl
 import glob
 import multiprocessing as mp
 import os
+import sys
 
 CDROMEJECT = 0x5309
 CDROMCLOSETRAY = 0x5319
@@ -33,11 +34,13 @@ def init(lock_):
 def uprint(*args, **kwargs):
 	now = datetime.now()
 	print(now, *args, **kwargs)
+	sys.stdout.flush()
 
 def lprint(*args, **kwargs):
 	now = datetime.now()
 	with lock:
 		print(now, *args, **kwargs)
+		sys.stdout.flush()
 
 def device_drivers(device):
 	parts = device.split("/")
