@@ -99,7 +99,7 @@ def tray_eject(device):
 	uprint(f"-- Closed {name}")
 
 	stop = datetime.now()
-	uprint(f"== Tray ejected on {name}, {ret} ({stop - start})")
+	uprint(f"== Tray ejected on {name}, 0x{ret:x} ({stop - start})")
 
 def tray_close(device):
 	name = "/dev/" + device.split("/")[-1]
@@ -118,7 +118,7 @@ def tray_close(device):
 	uprint(f"-- Closed {name}")
 
 	stop = datetime.now()
-	uprint(f"== Tray closed on {name}, {ret} ({stop - start})")
+	uprint(f"== Tray closed on {name}, 0x{ret:x} ({stop - start})")
 
 def door_lock(device):
 	name = "/dev/" + device.split("/")[-1]
@@ -137,7 +137,7 @@ def door_lock(device):
 	uprint(f"-- Closed {name}")
 
 	stop = datetime.now()
-	uprint(f"== Door locked on {name}, {ret} ({stop - start})")
+	uprint(f"== Door locked on {name}, 0x{ret:x} ({stop - start})")
 
 def door_unlock(device):
 	name = "/dev/" + device.split("/")[-1]
@@ -156,7 +156,7 @@ def door_unlock(device):
 	uprint(f"-- Closed {name}")
 
 	stop = datetime.now()
-	uprint(f"== Door unlocked on {name}, {ret} ({stop - start})")
+	uprint(f"== Door unlocked on {name}, 0x{ret:x} ({stop - start})")
 
 def is_usb(device):
 	return "/usb" in device
