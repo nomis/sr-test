@@ -113,7 +113,7 @@ def tray_eject(data):
 
 	stop = datetime.now()
 	reference = format_td((stop - start) - timings["eject"]) if timings else ""
-	uprint(f"== Tray ejected on {name}, 0x{ret:x} ({stop - start}) {reference}")
+	uprint(f"== Tray ejected on {name}, 0x{ret:x} ({stop - start}) {reference} {device_type(device)}")
 	return stop - start
 
 def tray_close(data):
@@ -136,7 +136,7 @@ def tray_close(data):
 
 	stop = datetime.now()
 	reference = format_td((stop - start) - timings["close"]) if timings else ""
-	uprint(f"== Tray closed on {name}, 0x{ret:x} ({stop - start}) {reference}")
+	uprint(f"== Tray closed on {name}, 0x{ret:x} ({stop - start}) {reference} {device_type(device)}")
 	return stop - start
 
 def door_lock(device):
@@ -197,17 +197,31 @@ def is_sata(device, drivers=None):
 	return False
 
 """Order by pata (most likely to block other accesses), then sata, then usb (non-motorised tray eject)."""
-def device_sort_key(device):
+def device_sort_key(device, drivers=None):
 	if is_usb(device):
 		return ("usb", device)
 
-	drivers = device_drivers(device)
+	if drivers is None:
+		drivers = device_drivers(device)
 	if is_pata(device, drivers):
 		return ("pata", device)
 	if is_sata(device, drivers):
 		return ("sata", device)
 
 	return (None, device)
+
+def device_type(device):
+	drivers = device_drivers(device)
+
+	if is_pata(device, drivers):
+		ata = ""
+		parts = device.split("/")
+		for n in range(4, len(parts)):
+			if parts[n].startswith("ata"):
+				ata = " " + parts[n]
+		return device_sort_key(device, drivers)[0] + ata + (" slave" if ":1:0/block" in device else " master")
+	else:
+		return device_sort_key(device, drivers)[0]
 
 def reference_timings(devices):
 	timings = {}
