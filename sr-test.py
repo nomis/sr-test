@@ -248,6 +248,7 @@ if __name__ == "__main__":
 	parser.add_argument("-t", "--close-usb", action="store_true", help="Close all USB drive trays")
 	parser.add_argument("-L", "--lock", action="store_true", help="Lock all drive doors")
 	parser.add_argument("-U", "--unlock", action="store_true", help="Unlock all drive doors")
+	parser.add_argument("-f", "--filter", action="append", metavar="srN", type=str, help="Select specific drives")
 
 	args = parser.parse_args()
 
@@ -256,6 +257,9 @@ if __name__ == "__main__":
 		for device in devices:
 			device_info(device)
 		uprint()
+
+		if args.filter:
+			devices = list(filter(lambda device: device.split("/")[-1] in args.filter, devices))
 
 		if args.unlock:
 			pool.map(door_unlock, devices)
@@ -273,10 +277,10 @@ if __name__ == "__main__":
 				pickle.dump(timings, f)
 
 		if args.eject or args.eject_usb:
-			pool.map(tray_eject, [(device, timings.get(device)) for device in list(filter(lambda device: (args.eject and not is_usb(device)) or (args.eject_usb and is_usb(device)), devices))])
+			pool.map(tray_eject, [(device, timings.get(device)) for device in list(filter(lambda device: (args.eject and not is_usb(device)) or (args.eject_usb and is_usb(device)) or (args.filter), devices))])
 
 		if args.close or args.close_usb:
-			pool.map(tray_close, [(device, timings.get(device)) for device in list(filter(lambda device: (args.close and not is_usb(device)) or (args.close_usb and is_usb(device)), devices))])
+			pool.map(tray_close, [(device, timings.get(device)) for device in list(filter(lambda device: (args.close and not is_usb(device)) or (args.close_usb and is_usb(device)) or (args.filter), devices))])
 
 		if args.lock:
 			pool.map(door_lock, devices)
