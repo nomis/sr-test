@@ -101,20 +101,33 @@ def tray_eject(data):
 	start = datetime.now()
 
 	uprint(f"-- Opening {name}")
+	start_open = datetime.now()
 	fd = os.open(name, os.O_RDONLY | os.O_NONBLOCK)
-	uprint(f"-- Opened {name}")
+	stop_open = datetime.now()
+	reference = format_td((stop_open - start_open) - timings["eject_open"]) if timings else ""
+	uprint(f"-- Opened {name} ({stop_open - start_open}) {reference}")
+
+	uprint(f"-- ioctl {name}")
+	start_ioctl = datetime.now()
 	try:
 		ret = fcntl.ioctl(fd, CDROMEJECT, 1)
 	except OSError as e:
 		ret = e
+	stop_ioctl = datetime.now()
+	reference = format_td((stop_ioctl - start_ioctl) - timings["eject_ioctl"]) if timings else ""
+	uprint(f"-- ioctl {name} ({stop_ioctl - start_ioctl}) {reference}")
+
 	uprint(f"-- Closing {name}")
+	start_close = datetime.now()
 	os.close(fd)
-	uprint(f"-- Closed {name}")
+	stop_close = datetime.now()
+	reference = format_td((stop_close - start_close) - timings["eject_close"]) if timings else ""
+	uprint(f"-- Closed {name} ({stop_close - start_close}) {reference}")
 
 	stop = datetime.now()
-	reference = format_td((stop - start) - timings["eject"]) if timings else ""
+	reference = format_td((stop - start) - timings["eject_total"]) if timings else ""
 	uprint(f"== Tray ejected on {name}, 0x{ret:x} ({stop - start}) {reference} {device_type(device)}")
-	return stop - start
+	return { "eject_total": stop - start, "eject_open": stop_open - start_open, "eject_ioctl": stop_ioctl - start_ioctl, "eject_close": stop_close - start_close }
 
 def tray_close(data):
 	(device, timings) = data
@@ -124,20 +137,33 @@ def tray_close(data):
 	start = datetime.now()
 
 	uprint(f"-- Opening {name}")
+	start_open = datetime.now()
 	fd = os.open(name, os.O_RDONLY | os.O_NONBLOCK)
-	uprint(f"-- Opened {name}")
+	stop_open = datetime.now()
+	reference = format_td((stop_open - start_open) - timings["close_open"]) if timings else ""
+	uprint(f"-- Opened {name} ({stop_open - start_open}) {reference}")
+
+	uprint(f"-- ioctl {name}")
+	start_ioctl = datetime.now()
 	try:
 		ret = fcntl.ioctl(fd, CDROMCLOSETRAY, 0)
 	except OSError as e:
 		ret = e
+	stop_ioctl = datetime.now()
+	reference = format_td((stop_ioctl - start_ioctl) - timings["close_ioctl"]) if timings else ""
+	uprint(f"-- ioctl {name} ({stop_ioctl - start_ioctl}) {reference}")
+
 	uprint(f"-- Closing {name}")
+	start_close = datetime.now()
 	os.close(fd)
-	uprint(f"-- Closed {name}")
+	stop_close = datetime.now()
+	reference = format_td((stop_close - start_close) - timings["close_close"]) if timings else ""
+	uprint(f"-- Closed {name} ({stop_close - start_close}) {reference}")
 
 	stop = datetime.now()
-	reference = format_td((stop - start) - timings["close"]) if timings else ""
+	reference = format_td((stop - start) - timings["close_total"]) if timings else ""
 	uprint(f"== Tray closed on {name}, 0x{ret:x} ({stop - start}) {reference} {device_type(device)}")
-	return stop - start
+	return { "close_total": stop - start, "close_open": stop_open - start_open, "close_ioctl": stop_ioctl - start_ioctl, "close_close": stop_close - start_close }
 
 def door_lock(device):
 	name = "/dev/" + device.split("/")[-1]
@@ -226,9 +252,9 @@ def device_type(device):
 def reference_timings(devices):
 	timings = {}
 	for device in devices:
-		timings[device] = { "eject": tray_eject((device, None)) }
+		timings[device] = tray_eject((device, None))
 		time.sleep(5)
-		timings[device]["close"] = tray_close((device, None))
+		timings[device].update(tray_close((device, None)))
 		time.sleep(5)
 
 	return timings
@@ -277,10 +303,10 @@ if __name__ == "__main__":
 				pickle.dump(timings, f)
 
 		if args.eject or args.eject_usb:
-			pool.map(tray_eject, [(device, timings.get(device)) for device in list(filter(lambda device: (args.eject and not is_usb(device)) or (args.eject_usb and is_usb(device)) or (args.filter), devices))])
+			pool.map(tray_eject, [(device, timings.get(device)) for device in list(filter(lambda device: (args.eject and not is_usb(device)) or (args.eject_usb and is_usb(device)) or ((args.eject or args.eject_usb) and args.filter), devices))])
 
 		if args.close or args.close_usb:
-			pool.map(tray_close, [(device, timings.get(device)) for device in list(filter(lambda device: (args.close and not is_usb(device)) or (args.close_usb and is_usb(device)) or (args.filter), devices))])
+			pool.map(tray_close, [(device, timings.get(device)) for device in list(filter(lambda device: (args.close and not is_usb(device)) or (args.close_usb and is_usb(device)) or ((args.close or args.close_usb) and args.filter), devices))])
 
 		if args.lock:
 			pool.map(door_lock, devices)
