@@ -275,38 +275,49 @@ if __name__ == "__main__":
 	parser.add_argument("-L", "--lock", action="store_true", help="Lock all drive doors")
 	parser.add_argument("-U", "--unlock", action="store_true", help="Unlock all drive doors")
 	parser.add_argument("-f", "--filter", action="append", metavar="srN", type=str, help="Select specific drives")
+	parser.add_argument("-v", "--scsi-log", action="store_true", help="Enable SCSI kernel logging")
+
 
 	args = parser.parse_args()
 
-	with mp.Pool(initializer=init, initargs=(lock,), processes=1 if args.sequential else len(devices)) as pool:
-		uprint("** Devices:")
-		for device in devices:
-			device_info(device)
-		uprint()
+	try:
+		if args.scsi_log:
+			with open("/proc/sys/dev/scsi/logging_level", "wb") as f:
+				f.write(b"1073741823")
 
-		if args.filter:
-			devices = list(filter(lambda device: device.split("/")[-1] in args.filter, devices))
+		with mp.Pool(initializer=init, initargs=(lock,), processes=1 if args.sequential else len(devices)) as pool:
+			uprint("** Devices:")
+			for device in devices:
+				device_info(device)
+			uprint()
 
-		if args.unlock:
-			pool.map(door_unlock, devices)
+			if args.filter:
+				devices = list(filter(lambda device: device.split("/")[-1] in args.filter, devices))
 
-		try:
-			with open("timings.pickle", "rb") as f:
-				timings = pickle.load(f)
-		except FileNotFoundError:
-			timings = {}
+			if args.unlock:
+				pool.map(door_unlock, devices)
 
-		if args.reference:
-			timings = reference_timings(filter(lambda device: not is_usb(device), devices))
+			try:
+				with open("timings.pickle", "rb") as f:
+					timings = pickle.load(f)
+			except FileNotFoundError:
+				timings = {}
 
-			with open("timings.pickle", "wb") as f:
-				pickle.dump(timings, f)
+			if args.reference:
+				timings = reference_timings(filter(lambda device: not is_usb(device), devices))
 
-		if args.eject or args.eject_usb:
-			pool.map(tray_eject, [(device, timings.get(device)) for device in list(filter(lambda device: (args.eject and not is_usb(device)) or (args.eject_usb and is_usb(device)) or ((args.eject or args.eject_usb) and args.filter), devices))])
+				with open("timings.pickle", "wb") as f:
+					pickle.dump(timings, f)
 
-		if args.close or args.close_usb:
-			pool.map(tray_close, [(device, timings.get(device)) for device in list(filter(lambda device: (args.close and not is_usb(device)) or (args.close_usb and is_usb(device)) or ((args.close or args.close_usb) and args.filter), devices))])
+			if args.eject or args.eject_usb:
+				pool.map(tray_eject, [(device, timings.get(device)) for device in list(filter(lambda device: (args.eject and not is_usb(device)) or (args.eject_usb and is_usb(device)) or ((args.eject or args.eject_usb) and args.filter), devices))])
 
-		if args.lock:
-			pool.map(door_lock, devices)
+			if args.close or args.close_usb:
+				pool.map(tray_close, [(device, timings.get(device)) for device in list(filter(lambda device: (args.close and not is_usb(device)) or (args.close_usb and is_usb(device)) or ((args.close or args.close_usb) and args.filter), devices))])
+
+			if args.lock:
+				pool.map(door_lock, devices)
+	finally:
+		if args.scsi_log:
+			with open("/proc/sys/dev/scsi/logging_level", "wb") as f:
+				f.write(b"0")
