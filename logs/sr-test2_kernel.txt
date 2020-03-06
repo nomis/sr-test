@@ -1,0 +1,574 @@
+Mar  5 15:11:33 ixolite kernel: [  725.620398] sr 8:0:0:0: [sr3] sr_block_open start pid=1224 comm=python3
+Mar  5 15:11:33 ixolite kernel: [  725.620403] sr 8:0:0:0: [sr3] sr_block_open autopm_get_device start
+Mar  5 15:11:33 ixolite kernel: [  725.620406] sr 8:0:0:0: [sr3] sr_block_open autopm_get_device stop
+Mar  5 15:11:33 ixolite kernel: [  725.620408] sr 8:0:0:0: [sr3] sr_block_open check_disk_change start
+Mar  5 15:11:33 ixolite kernel: [  725.620410] [sr3] check_disk_change: disk_clear_events start
+Mar  5 15:11:33 ixolite kernel: [  725.620452] sr 8:0:0:0: tag#0 Send: scmd 0x00000000dacca97a
+Mar  5 15:11:33 ixolite kernel: [  725.620456] sr 8:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:33 ixolite kernel: [  725.621361] sr 8:0:0:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:33 ixolite kernel: [  725.621363] sr 8:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:33 ixolite kernel: [  725.621367] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:33 ixolite kernel: [  725.621370] sr 8:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:33 ixolite kernel: [  725.621372] sr 8:0:0:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:33 ixolite kernel: [  725.621682] sr 8:0:0:0: tag#0 Send: scmd 0x00000000f39fbfd4
+Mar  5 15:11:33 ixolite kernel: [  725.621692] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.622022] sr 8:0:0:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:33 ixolite kernel: [  725.622029] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.622033] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:33 ixolite kernel: [  725.622036] sr 8:0:0:0: tag#0 abort scheduled
+Mar  5 15:11:33 ixolite kernel: [  725.623380] sr 8:0:1:0: [sr4] sr_block_open start pid=1226 comm=python3
+Mar  5 15:11:33 ixolite kernel: [  725.623386] sr 8:0:1:0: [sr4] sr_block_open autopm_get_device start
+Mar  5 15:11:33 ixolite kernel: [  725.623389] sr 8:0:1:0: [sr4] sr_block_open autopm_get_device stop
+Mar  5 15:11:33 ixolite kernel: [  725.623390] sr 8:0:1:0: [sr4] sr_block_open check_disk_change start
+Mar  5 15:11:33 ixolite kernel: [  725.623392] [sr4] check_disk_change: disk_clear_events start
+Mar  5 15:11:33 ixolite kernel: [  725.633619] sr 8:0:0:0: tag#0 aborting command
+Mar  5 15:11:33 ixolite kernel: [  725.633624] sr 8:0:0:0: tag#0 cmd abort failed
+Mar  5 15:11:33 ixolite kernel: [  725.657566] scsi host8: Waking error handler thread
+Mar  5 15:11:33 ixolite kernel: [  725.657575] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:33 ixolite kernel: [  725.658278] sr 8:0:0:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:33 ixolite kernel: [  725.658285] sr 8:0:0:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:33 ixolite kernel: [  725.658289] sr 8:0:0:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:33 ixolite kernel: [  725.658311] scsi host8: waking up host to restart
+Mar  5 15:11:33 ixolite kernel: [  725.658320] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:33 ixolite kernel: [  725.658366] sr 8:0:0:0: tag#0 Send: scmd 0x00000000dacca97a
+Mar  5 15:11:33 ixolite kernel: [  725.658375] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.658771] sr 8:0:0:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:33 ixolite kernel: [  725.658775] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.658779] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:33 ixolite kernel: [  725.658782] sr 8:0:0:0: tag#0 abort scheduled
+Mar  5 15:11:33 ixolite kernel: [  725.669582] sr 8:0:0:0: tag#0 aborting command
+Mar  5 15:11:33 ixolite kernel: [  725.669586] sr 8:0:0:0: tag#0 cmd abort failed
+Mar  5 15:11:33 ixolite kernel: [  725.689566] scsi host8: Waking error handler thread
+Mar  5 15:11:33 ixolite kernel: [  725.689573] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:33 ixolite kernel: [  725.690288] sr 8:0:0:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:33 ixolite kernel: [  725.690292] sr 8:0:0:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:33 ixolite kernel: [  725.690295] sr 8:0:0:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:33 ixolite kernel: [  725.690309] scsi host8: waking up host to restart
+Mar  5 15:11:33 ixolite kernel: [  725.690321] sr 8:0:0:0: [sr3] sr_check_events: scsi_status_is_good(ret)=0, scsi_sense_valid(&sshdr)=1, sshdr.asc=0x3a
+Mar  5 15:11:33 ixolite kernel: [  725.690322] sr 8:0:1:0: tag#0 Send: scmd 0x00000000c5db4fc8
+Mar  5 15:11:33 ixolite kernel: [  725.690327] sr 8:0:0:0: [sr3] sr_check_events: last_present (1) != cd->media_present (0), set cd->device->changed = 1
+Mar  5 15:11:33 ixolite kernel: [  725.690329] sr 8:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:33 ixolite kernel: [  725.690333] sr 8:0:0:0: [sr3] sr_check_events: cd->device->changed, set DISK_EVENT_MEDIA_CHANGE
+Mar  5 15:11:33 ixolite kernel: [  725.690339] [sr3] check_disk_change: disk_clear_events stop (events&=0x1)
+Mar  5 15:11:33 ixolite kernel: [  725.690341] [sr3] check_disk_change: flush_disk start
+Mar  5 15:11:33 ixolite kernel: [  725.690353] [sr3] flush_disk: bd_invalidated = 1
+Mar  5 15:11:33 ixolite kernel: [  725.690354] [sr3] check_disk_change: flush_disk stop
+Mar  5 15:11:33 ixolite kernel: [  725.690355] [sr3] check_disk_change: revalidate_disk start
+Mar  5 15:11:33 ixolite kernel: [  725.690375] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:33 ixolite kernel: [  725.690693] sr 8:0:1:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:33 ixolite kernel: [  725.690709] sr 8:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:33 ixolite kernel: [  725.690716] sr 8:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:33 ixolite kernel: [  725.690722] sr 8:0:1:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:33 ixolite kernel: [  725.690727] sr 8:0:1:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:33 ixolite kernel: [  725.690837] sr 8:0:1:0: tag#0 Send: scmd 0x0000000040e22991
+Mar  5 15:11:33 ixolite kernel: [  725.690842] sr 8:0:1:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.691090] sr 8:0:1:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:33 ixolite kernel: [  725.691094] sr 8:0:1:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.691098] sr 8:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:33 ixolite kernel: [  725.691101] sr 8:0:1:0: tag#0 abort scheduled
+Mar  5 15:11:33 ixolite kernel: [  725.701574] sr 8:0:1:0: tag#0 aborting command
+Mar  5 15:11:33 ixolite kernel: [  725.701578] sr 8:0:1:0: tag#0 cmd abort failed
+Mar  5 15:11:33 ixolite kernel: [  725.721572] scsi host8: Waking error handler thread
+Mar  5 15:11:33 ixolite kernel: [  725.721579] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:33 ixolite kernel: [  725.721962] sr 8:0:1:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:33 ixolite kernel: [  725.721966] sr 8:0:1:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:33 ixolite kernel: [  725.721970] sr 8:0:1:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:33 ixolite kernel: [  725.721990] scsi host8: waking up host to restart
+Mar  5 15:11:33 ixolite kernel: [  725.721995] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:33 ixolite kernel: [  725.722009] sr 8:0:1:0: [sr4] sr_check_events: scsi_status_is_good(ret)=0, scsi_sense_valid(&sshdr)=1, sshdr.asc=0x3a
+Mar  5 15:11:33 ixolite kernel: [  725.722013] sr 8:0:1:0: [sr4] sr_check_events: last_present (1) != cd->media_present (0), set cd->device->changed = 1
+Mar  5 15:11:33 ixolite kernel: [  725.722016] sr 8:0:1:0: [sr4] sr_check_events: cd->device->changed, set DISK_EVENT_MEDIA_CHANGE
+Mar  5 15:11:33 ixolite kernel: [  725.722028] sr 8:0:0:0: tag#0 Send: scmd 0x00000000f39fbfd4
+Mar  5 15:11:33 ixolite kernel: [  725.722032] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.722112] [sr4] check_disk_change: disk_clear_events stop (events&=0x1)
+Mar  5 15:11:33 ixolite kernel: [  725.722113] [sr4] check_disk_change: flush_disk start
+Mar  5 15:11:33 ixolite kernel: [  725.722117] [sr4] flush_disk: bd_invalidated = 1
+Mar  5 15:11:33 ixolite kernel: [  725.722118] [sr4] check_disk_change: flush_disk stop
+Mar  5 15:11:33 ixolite kernel: [  725.722119] [sr4] check_disk_change: revalidate_disk start
+Mar  5 15:11:33 ixolite kernel: [  725.722399] sr 8:0:0:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:33 ixolite kernel: [  725.722404] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.722408] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:33 ixolite kernel: [  725.722411] sr 8:0:0:0: tag#0 abort scheduled
+Mar  5 15:11:33 ixolite kernel: [  725.733573] sr 8:0:0:0: tag#0 aborting command
+Mar  5 15:11:33 ixolite kernel: [  725.733577] sr 8:0:0:0: tag#0 cmd abort failed
+Mar  5 15:11:33 ixolite kernel: [  725.733608] sr 1:0:0:0: tag#0 Send: scmd 0x00000000b689853a
+Mar  5 15:11:33 ixolite kernel: [  725.733614] sr 1:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:33 ixolite kernel: [  725.733938] sr 1:0:0:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:33 ixolite kernel: [  725.733956] sr 1:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:33 ixolite kernel: [  725.733963] sr 1:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:33 ixolite kernel: [  725.733969] sr 1:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:33 ixolite kernel: [  725.733974] sr 1:0:0:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:33 ixolite kernel: [  725.753579] scsi host8: Waking error handler thread
+Mar  5 15:11:33 ixolite kernel: [  725.753585] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:33 ixolite kernel: [  725.754213] sr 8:0:0:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:33 ixolite kernel: [  725.754217] sr 8:0:0:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:33 ixolite kernel: [  725.754221] sr 8:0:0:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:33 ixolite kernel: [  725.754235] scsi host8: waking up host to restart
+Mar  5 15:11:33 ixolite kernel: [  725.754241] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:33 ixolite kernel: [  725.754249] sr 8:0:0:0: [sr3] sr_block_revalidate_disk not ready
+Mar  5 15:11:33 ixolite kernel: [  725.754261] sr 8:0:1:0: tag#0 Send: scmd 0x00000000c5db4fc8
+Mar  5 15:11:33 ixolite kernel: [  725.754264] sr 8:0:1:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.754341] [sr3] check_disk_change: revalidate_disk stop
+Mar  5 15:11:33 ixolite kernel: [  725.754345] sr 8:0:0:0: [sr3] sr_block_open check_disk_change stop
+Mar  5 15:11:33 ixolite kernel: [  725.754348] sr 8:0:0:0: [sr3] sr_block_open mutex_lock start
+Mar  5 15:11:33 ixolite kernel: [  725.754352] sr 8:0:0:0: [sr3] sr_block_open mutex_lock stop
+Mar  5 15:11:33 ixolite kernel: [  725.754355] sr 8:0:0:0: [sr3] sr_block_open cdrom_open start
+Mar  5 15:11:33 ixolite kernel: [  725.754359] sr 8:0:0:0: [sr3] sr_block_open cdrom_open stop
+Mar  5 15:11:33 ixolite kernel: [  725.754362] sr 8:0:0:0: [sr3] sr_block_open mutex_unlock start
+Mar  5 15:11:33 ixolite kernel: [  725.754365] sr 8:0:0:0: [sr3] sr_block_open mutex_unlock stop
+Mar  5 15:11:33 ixolite kernel: [  725.754368] sr 8:0:0:0: [sr3] sr_block_open scsi_autopm_put_device start
+Mar  5 15:11:33 ixolite kernel: [  725.754371] sr 8:0:0:0: [sr3] sr_block_open scsi_autopm_put_device stop
+Mar  5 15:11:33 ixolite kernel: [  725.754375] sr 8:0:0:0: [sr3] sr_block_open stop pid=1224 comm=python3
+Mar  5 15:11:33 ixolite kernel: [  725.754379] [sr3] __blkdev_get: __blkdev_get bdev_disk_changed start (invalidate=0)
+Mar  5 15:11:33 ixolite kernel: [  725.754381] [sr3] bdev_disk_changed: bdev_disk_changed revalidate_disk start
+Mar  5 15:11:33 ixolite kernel: [  725.754493] sr 8:0:1:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:33 ixolite kernel: [  725.754497] sr 8:0:1:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.754500] sr 8:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:33 ixolite kernel: [  725.754504] sr 8:0:1:0: tag#0 abort scheduled
+Mar  5 15:11:33 ixolite kernel: [  725.765576] sr 8:0:1:0: tag#0 aborting command
+Mar  5 15:11:33 ixolite kernel: [  725.765579] sr 8:0:1:0: tag#0 cmd abort failed
+Mar  5 15:11:33 ixolite kernel: [  725.765596] sr 1:0:1:0: tag#0 Send: scmd 0x00000000f8e132d4
+Mar  5 15:11:33 ixolite kernel: [  725.765601] sr 1:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:33 ixolite kernel: [  725.765964] sr 1:0:1:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:33 ixolite kernel: [  725.765979] sr 1:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:33 ixolite kernel: [  725.765985] sr 1:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:33 ixolite kernel: [  725.765990] sr 1:0:1:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:33 ixolite kernel: [  725.765994] sr 1:0:1:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:33 ixolite kernel: [  725.785577] scsi host8: Waking error handler thread
+Mar  5 15:11:33 ixolite kernel: [  725.785583] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:33 ixolite kernel: [  725.785979] sr 8:0:1:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:33 ixolite kernel: [  725.785983] sr 8:0:1:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:33 ixolite kernel: [  725.785987] sr 8:0:1:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:33 ixolite kernel: [  725.786000] scsi host8: waking up host to restart
+Mar  5 15:11:33 ixolite kernel: [  725.786005] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:33 ixolite kernel: [  725.786013] sr 8:0:1:0: [sr4] sr_block_revalidate_disk not ready
+Mar  5 15:11:33 ixolite kernel: [  725.786024] sr 8:0:0:0: tag#0 Send: scmd 0x00000000dacca97a
+Mar  5 15:11:33 ixolite kernel: [  725.786030] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.786112] [sr4] check_disk_change: revalidate_disk stop
+Mar  5 15:11:33 ixolite kernel: [  725.786115] sr 8:0:1:0: [sr4] sr_block_open check_disk_change stop
+Mar  5 15:11:33 ixolite kernel: [  725.786118] sr 8:0:1:0: [sr4] sr_block_open mutex_lock start
+Mar  5 15:11:33 ixolite kernel: [  725.786121] sr 8:0:1:0: [sr4] sr_block_open mutex_lock stop
+Mar  5 15:11:33 ixolite kernel: [  725.786124] sr 8:0:1:0: [sr4] sr_block_open cdrom_open start
+Mar  5 15:11:33 ixolite kernel: [  725.786127] sr 8:0:1:0: [sr4] sr_block_open cdrom_open stop
+Mar  5 15:11:33 ixolite kernel: [  725.786130] sr 8:0:1:0: [sr4] sr_block_open mutex_unlock start
+Mar  5 15:11:33 ixolite kernel: [  725.786133] sr 8:0:1:0: [sr4] sr_block_open mutex_unlock stop
+Mar  5 15:11:33 ixolite kernel: [  725.786136] sr 8:0:1:0: [sr4] sr_block_open scsi_autopm_put_device start
+Mar  5 15:11:33 ixolite kernel: [  725.786139] sr 8:0:1:0: [sr4] sr_block_open scsi_autopm_put_device stop
+Mar  5 15:11:33 ixolite kernel: [  725.786143] sr 8:0:1:0: [sr4] sr_block_open stop pid=1226 comm=python3
+Mar  5 15:11:33 ixolite kernel: [  725.786145] [sr4] __blkdev_get: __blkdev_get bdev_disk_changed start (invalidate=0)
+Mar  5 15:11:33 ixolite kernel: [  725.786146] [sr4] bdev_disk_changed: bdev_disk_changed revalidate_disk start
+Mar  5 15:11:33 ixolite kernel: [  725.786403] sr 8:0:0:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:33 ixolite kernel: [  725.786407] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.786411] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:33 ixolite kernel: [  725.786414] sr 8:0:0:0: tag#0 abort scheduled
+Mar  5 15:11:33 ixolite kernel: [  725.797577] sr 8:0:0:0: tag#0 aborting command
+Mar  5 15:11:33 ixolite kernel: [  725.797581] sr 8:0:0:0: tag#0 cmd abort failed
+Mar  5 15:11:33 ixolite kernel: [  725.817579] scsi host8: Waking error handler thread
+Mar  5 15:11:33 ixolite kernel: [  725.817585] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:33 ixolite kernel: [  725.818232] sr 8:0:0:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:33 ixolite kernel: [  725.818236] sr 8:0:0:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:33 ixolite kernel: [  725.818239] sr 8:0:0:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:33 ixolite kernel: [  725.818252] scsi host8: waking up host to restart
+Mar  5 15:11:33 ixolite kernel: [  725.818257] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:33 ixolite kernel: [  725.818265] sr 8:0:0:0: [sr3] sr_block_revalidate_disk not ready
+Mar  5 15:11:33 ixolite kernel: [  725.818275] sr 8:0:1:0: tag#0 Send: scmd 0x0000000040e22991
+Mar  5 15:11:33 ixolite kernel: [  725.818279] sr 8:0:1:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.818355] [sr3] bdev_disk_changed: bdev_disk_changed revalidate_disk stop
+Mar  5 15:11:33 ixolite kernel: [  725.818357] [sr3] __blkdev_get: __blkdev_get bdev_disk_changed stop
+Mar  5 15:11:33 ixolite kernel: [  725.818515] sr 8:0:1:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:33 ixolite kernel: [  725.818520] sr 8:0:1:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:33 ixolite kernel: [  725.818525] sr 8:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:33 ixolite kernel: [  725.818529] sr 8:0:1:0: tag#0 abort scheduled
+Mar  5 15:11:33 ixolite kernel: [  725.818657] sr 8:0:0:0: [sr3] sr_block_compat_ioctl start pid=1224 comm=python3
+Mar  5 15:11:33 ixolite kernel: [  725.818661] sr 8:0:0:0: [sr3] sr_block_compat_ioctl mutex_lock start
+Mar  5 15:11:33 ixolite kernel: [  725.818664] sr 8:0:0:0: [sr3] sr_block_compat_ioctl mutex_lock stop
+Mar  5 15:11:33 ixolite kernel: [  725.818669] scsi_cmd_ioctl: sr3 open tray start pid=1224 comm=python3
+Mar  5 15:11:33 ixolite kernel: [  725.829580] sr 8:0:1:0: tag#0 aborting command
+Mar  5 15:11:33 ixolite kernel: [  725.829584] sr 8:0:1:0: tag#0 cmd abort failed
+Mar  5 15:11:33 ixolite kernel: [  725.861578] scsi host8: Waking error handler thread
+Mar  5 15:11:33 ixolite kernel: [  725.861584] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:33 ixolite kernel: [  725.861997] sr 8:0:1:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:33 ixolite kernel: [  725.862001] sr 8:0:1:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:33 ixolite kernel: [  725.862004] sr 8:0:1:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:33 ixolite kernel: [  725.862017] scsi host8: waking up host to restart
+Mar  5 15:11:33 ixolite kernel: [  725.862022] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:33 ixolite kernel: [  725.862032] sr 8:0:1:0: [sr4] sr_block_revalidate_disk not ready
+Mar  5 15:11:33 ixolite kernel: [  725.862043] sr 8:0:0:0: [sr3] tag#0 Send: scmd 0x00000000f39fbfd4
+Mar  5 15:11:33 ixolite kernel: [  725.862048] sr 8:0:0:0: [sr3] tag#0 CDB: Start/Stop Unit 1b 00 00 00 02 00
+Mar  5 15:11:33 ixolite kernel: [  725.862131] [sr4] bdev_disk_changed: bdev_disk_changed revalidate_disk stop
+Mar  5 15:11:33 ixolite kernel: [  725.862138] [sr4] __blkdev_get: __blkdev_get bdev_disk_changed stop
+Mar  5 15:11:33 ixolite kernel: [  725.862380] sr 8:0:1:0: [sr4] sr_block_compat_ioctl start pid=1226 comm=python3
+Mar  5 15:11:33 ixolite kernel: [  725.862383] sr 8:0:1:0: [sr4] sr_block_compat_ioctl mutex_lock start
+Mar  5 15:11:33 ixolite kernel: [  725.862386] sr 8:0:1:0: [sr4] sr_block_compat_ioctl mutex_lock stop
+Mar  5 15:11:33 ixolite kernel: [  725.862389] scsi_cmd_ioctl: sr4 open tray start pid=1226 comm=python3
+Mar  5 15:11:34 ixolite kernel: [  726.885671] sr 7:0:0:0: tag#0 Send: scmd 0x0000000013122f5e
+Mar  5 15:11:34 ixolite kernel: [  726.885677] sr 7:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:34 ixolite kernel: [  726.892679] sr 7:0:0:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:34 ixolite kernel: [  726.892698] sr 7:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:34 ixolite kernel: [  726.892708] sr 7:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:34 ixolite kernel: [  726.892717] sr 7:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:34 ixolite kernel: [  726.892722] sr 7:0:0:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:35 ixolite kernel: [  727.263128] sr 8:0:0:0: [sr3] tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=1s
+Mar  5 15:11:35 ixolite kernel: [  727.263149] sr 8:0:0:0: [sr3] tag#0 CDB: Start/Stop Unit 1b 00 00 00 02 00
+Mar  5 15:11:35 ixolite kernel: [  727.263185] sr 8:0:0:0: [sr3] tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:35 ixolite kernel: [  727.263202] sr 8:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:35 ixolite kernel: [  727.263210] sr 8:0:0:0: [sr3] tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:35 ixolite kernel: [  727.263255] scsi_cmd_ioctl: sr3 open tray stop pid=1224 comm=python3 err=0x0
+Mar  5 15:11:35 ixolite kernel: [  727.263262] sr 8:0:0:0: [sr3] sr_block_compat_ioctl mutex_unlock start
+Mar  5 15:11:35 ixolite kernel: [  727.263265] sr 8:0:0:0: [sr3] sr_block_compat_ioctl mutex_unlock stop
+Mar  5 15:11:35 ixolite kernel: [  727.263269] sr 8:0:0:0: [sr3] sr_block_compat_ioctl stop pid=1224 comm=python3
+Mar  5 15:11:35 ixolite kernel: [  727.263283] sr 8:0:1:0: [sr4] tag#0 Send: scmd 0x00000000c5db4fc8
+Mar  5 15:11:35 ixolite kernel: [  727.263288] sr 8:0:1:0: [sr4] tag#0 CDB: Start/Stop Unit 1b 00 00 00 02 00
+Mar  5 15:11:35 ixolite kernel: [  727.263525] [sr3] blkdev_put: disk_flush_events start
+Mar  5 15:11:35 ixolite kernel: [  727.263532] [sr3] blkdev_put: disk_flush_events stop
+Mar  5 15:11:35 ixolite kernel: [  727.263533] [sr3] blkdev_put: __blkdev_put start
+Mar  5 15:11:35 ixolite kernel: [  727.263547] sr 8:0:0:0: [sr3] sr_block_release start pid=1224 comm=python3
+Mar  5 15:11:35 ixolite kernel: [  727.263550] sr 8:0:0:0: [sr3] sr_block_release mutex_lock start
+Mar  5 15:11:35 ixolite kernel: [  727.263553] sr 8:0:0:0: [sr3] sr_block_release mutex_lock stop
+Mar  5 15:11:35 ixolite kernel: [  727.263560] sr 8:0:0:0: [sr3] sr_block_release cdrom_release start
+Mar  5 15:11:35 ixolite kernel: [  727.263563] cdrom: cdrom_release: sr3 pid=1224 unlocking door (start)
+Mar  5 15:11:35 ixolite kernel: [  727.263567] sr 8:0:0:0: [sr3] sr_lock_door: start (unlock)
+Mar  5 15:11:35 ixolite kernel: [  727.263571] sr 8:0:0:0: Trying ioctl with scsi command 30
+Mar  5 15:11:35 ixolite kernel: [  727.749709] sr 1:0:0:0: tag#0 Send: scmd 0x00000000eafb6653
+Mar  5 15:11:35 ixolite kernel: [  727.749715] sr 1:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:35 ixolite kernel: [  727.750046] sr 1:0:0:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:35 ixolite kernel: [  727.750065] sr 1:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:35 ixolite kernel: [  727.750073] sr 1:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:35 ixolite kernel: [  727.750089] sr 1:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:35 ixolite kernel: [  727.750094] sr 1:0:0:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:35 ixolite kernel: [  727.781716] sr 1:0:1:0: tag#0 Send: scmd 0x0000000037c70355
+Mar  5 15:11:35 ixolite kernel: [  727.781720] sr 1:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:35 ixolite kernel: [  727.782090] sr 1:0:1:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:35 ixolite kernel: [  727.782116] sr 1:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:35 ixolite kernel: [  727.782123] sr 1:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:35 ixolite kernel: [  727.782129] sr 1:0:1:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:35 ixolite kernel: [  727.782134] sr 1:0:1:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.512969] sr 8:0:1:0: [sr4] tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=2s
+Mar  5 15:11:36 ixolite kernel: [  728.512985] sr 8:0:1:0: [sr4] tag#0 CDB: Start/Stop Unit 1b 00 00 00 02 00
+Mar  5 15:11:36 ixolite kernel: [  728.512995] sr 8:0:1:0: [sr4] tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.513007] sr 8:0:1:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:36 ixolite kernel: [  728.513016] sr 8:0:1:0: [sr4] tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.513051] scsi_cmd_ioctl: sr4 open tray stop pid=1226 comm=python3 err=0x0
+Mar  5 15:11:36 ixolite kernel: [  728.513056] sr 8:0:1:0: tag#0 Send: scmd 0x0000000040e22991
+Mar  5 15:11:36 ixolite kernel: [  728.513065] sr 8:0:1:0: [sr4] sr_block_compat_ioctl mutex_unlock start
+Mar  5 15:11:36 ixolite kernel: [  728.513070] sr 8:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.513077] sr 8:0:1:0: [sr4] sr_block_compat_ioctl mutex_unlock stop
+Mar  5 15:11:36 ixolite kernel: [  728.513081] sr 8:0:1:0: [sr4] sr_block_compat_ioctl stop pid=1226 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.513277] [sr4] blkdev_put: disk_flush_events start
+Mar  5 15:11:36 ixolite kernel: [  728.513288] [sr4] blkdev_put: disk_flush_events stop
+Mar  5 15:11:36 ixolite kernel: [  728.513290] [sr4] blkdev_put: __blkdev_put start
+Mar  5 15:11:36 ixolite kernel: [  728.513295] sr 8:0:1:0: [sr4] sr_block_release start pid=1226 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.513299] sr 8:0:1:0: [sr4] sr_block_release mutex_lock start
+Mar  5 15:11:36 ixolite kernel: [  728.513301] sr 8:0:1:0: [sr4] sr_block_release mutex_lock stop
+Mar  5 15:11:36 ixolite kernel: [  728.513304] sr 8:0:1:0: [sr4] sr_block_release cdrom_release start
+Mar  5 15:11:36 ixolite kernel: [  728.513306] cdrom: cdrom_release: sr4 pid=1226 unlocking door (start)
+Mar  5 15:11:36 ixolite kernel: [  728.513310] sr 8:0:1:0: [sr4] sr_lock_door: start (unlock)
+Mar  5 15:11:36 ixolite kernel: [  728.513313] sr 8:0:1:0: Trying ioctl with scsi command 30
+Mar  5 15:11:36 ixolite kernel: [  728.513401] sr 8:0:1:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:36 ixolite kernel: [  728.513405] sr 8:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.513409] sr 8:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.513412] sr 8:0:1:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:36 ixolite kernel: [  728.513416] sr 8:0:1:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.513441] sr 8:0:1:0: tag#0 Send: scmd 0x00000000c5db4fc8
+Mar  5 15:11:36 ixolite kernel: [  728.513445] sr 8:0:1:0: tag#0 CDB: Prevent/Allow Medium Removal 1e 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.513637] sr 8:0:1:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:36 ixolite kernel: [  728.513641] sr 8:0:1:0: tag#0 CDB: Prevent/Allow Medium Removal 1e 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.513644] sr 8:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.513647] sr 8:0:1:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:36 ixolite kernel: [  728.513650] sr 8:0:1:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.513686] sr 8:0:1:0: Ioctl returned  0x0
+Mar  5 15:11:36 ixolite kernel: [  728.513689] sr 8:0:1:0: IOCTL Releasing command
+Mar  5 15:11:36 ixolite kernel: [  728.513694] sr 8:0:1:0: [sr4] sr_lock_door: stop (unlock) ret=0x0
+Mar  5 15:11:36 ixolite kernel: [  728.513698] cdrom: cdrom_release: sr4 pid=1226 unlocking door (stop)
+Mar  5 15:11:36 ixolite kernel: [  728.513702] sr 8:0:1:0: [sr4] sr_block_release cdrom_release stop
+Mar  5 15:11:36 ixolite kernel: [  728.513705] sr 8:0:1:0: [sr4] sr_block_release mutex_unlock start
+Mar  5 15:11:36 ixolite kernel: [  728.513708] sr 8:0:1:0: [sr4] sr_block_release mutex_unlock stop
+Mar  5 15:11:36 ixolite kernel: [  728.513712] sr 8:0:1:0: [sr4] sr_block_release stop pid=1226 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.513746] sr 8:0:0:0: tag#0 Send: scmd 0x00000000dacca97a
+Mar  5 15:11:36 ixolite kernel: [  728.513754] sr 8:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.513852] [(efault)] blkdev_put: __blkdev_put stop
+Mar  5 15:11:36 ixolite kernel: [  728.514665] sr 8:0:0:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=1s
+Mar  5 15:11:36 ixolite kernel: [  728.514675] sr 8:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.514679] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.514683] sr 8:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:36 ixolite kernel: [  728.514687] sr 8:0:0:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.514727] sr 8:0:0:0: tag#0 Send: scmd 0x00000000f39fbfd4
+Mar  5 15:11:36 ixolite kernel: [  728.514731] sr 8:0:0:0: tag#0 CDB: Prevent/Allow Medium Removal 1e 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.515085] sr 8:0:0:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=1s
+Mar  5 15:11:36 ixolite kernel: [  728.515089] sr 8:0:0:0: tag#0 CDB: Prevent/Allow Medium Removal 1e 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.515093] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.515096] sr 8:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:36 ixolite kernel: [  728.515100] sr 8:0:0:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.515129] sr 8:0:0:0: tag#0 Send: scmd 0x00000000dacca97a
+Mar  5 15:11:36 ixolite kernel: [  728.515132] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.515134] sr 8:0:0:0: Ioctl returned  0x0
+Mar  5 15:11:36 ixolite kernel: [  728.515138] sr 8:0:0:0: IOCTL Releasing command
+Mar  5 15:11:36 ixolite kernel: [  728.515142] sr 8:0:0:0: [sr3] sr_lock_door: stop (unlock) ret=0x0
+Mar  5 15:11:36 ixolite kernel: [  728.515144] cdrom: cdrom_release: sr3 pid=1224 unlocking door (stop)
+Mar  5 15:11:36 ixolite kernel: [  728.515147] sr 8:0:0:0: [sr3] sr_block_release cdrom_release stop
+Mar  5 15:11:36 ixolite kernel: [  728.515150] sr 8:0:0:0: [sr3] sr_block_release mutex_unlock start
+Mar  5 15:11:36 ixolite kernel: [  728.515153] sr 8:0:0:0: [sr3] sr_block_release mutex_unlock stop
+Mar  5 15:11:36 ixolite kernel: [  728.515156] sr 8:0:0:0: [sr3] sr_block_release stop pid=1224 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.515169] [(efault)] blkdev_put: __blkdev_put stop
+Mar  5 15:11:36 ixolite kernel: [  728.515461] sr 8:0:0:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:36 ixolite kernel: [  728.515465] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.515469] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.515472] sr 8:0:0:0: tag#0 abort scheduled
+Mar  5 15:11:36 ixolite kernel: [  728.529750] sr 8:0:0:0: tag#0 aborting command
+Mar  5 15:11:36 ixolite kernel: [  728.529781] sr 8:0:0:0: tag#0 cmd abort failed
+Mar  5 15:11:36 ixolite kernel: [  728.557751] scsi host8: Waking error handler thread
+Mar  5 15:11:36 ixolite kernel: [  728.557763] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:36 ixolite kernel: [  728.558446] sr 8:0:0:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:36 ixolite kernel: [  728.558451] sr 8:0:0:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:36 ixolite kernel: [  728.558456] sr 8:0:0:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.558472] scsi host8: waking up host to restart
+Mar  5 15:11:36 ixolite kernel: [  728.558486] sr 8:0:1:0: tag#0 Send: scmd 0x0000000040e22991
+Mar  5 15:11:36 ixolite kernel: [  728.558491] sr 8:0:0:0: [sr3] sr_check_events: scsi_status_is_good(ret)=0, scsi_sense_valid(&sshdr)=1, sshdr.asc=0x3a
+Mar  5 15:11:36 ixolite kernel: [  728.558493] sr 8:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.558524] sr 8:0:0:0: [sr3] sr_block_open start pid=1225 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.558528] sr 8:0:0:0: [sr3] sr_block_open autopm_get_device start
+Mar  5 15:11:36 ixolite kernel: [  728.558532] sr 8:0:0:0: [sr3] sr_block_open autopm_get_device stop
+Mar  5 15:11:36 ixolite kernel: [  728.558535] sr 8:0:0:0: [sr3] sr_block_open check_disk_change start
+Mar  5 15:11:36 ixolite kernel: [  728.558538] [sr3] check_disk_change: disk_clear_events start
+Mar  5 15:11:36 ixolite kernel: [  728.558540] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:36 ixolite kernel: [  728.558847] sr 8:0:1:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:36 ixolite kernel: [  728.558862] sr 8:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.558868] sr 8:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.558875] sr 8:0:1:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:36 ixolite kernel: [  728.558883] sr 8:0:1:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.558924] sr 8:0:1:0: tag#0 Send: scmd 0x00000000c5db4fc8
+Mar  5 15:11:36 ixolite kernel: [  728.558929] sr 8:0:1:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.559132] sr 8:0:1:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:36 ixolite kernel: [  728.559137] sr 8:0:1:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.559140] sr 8:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.559143] sr 8:0:1:0: tag#0 abort scheduled
+Mar  5 15:11:36 ixolite kernel: [  728.569753] sr 8:0:1:0: tag#0 aborting command
+Mar  5 15:11:36 ixolite kernel: [  728.569756] sr 8:0:1:0: tag#0 cmd abort failed
+Mar  5 15:11:36 ixolite kernel: [  728.589751] scsi host8: Waking error handler thread
+Mar  5 15:11:36 ixolite kernel: [  728.589758] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:36 ixolite kernel: [  728.590141] sr 8:0:1:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:36 ixolite kernel: [  728.590145] sr 8:0:1:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:36 ixolite kernel: [  728.590149] sr 8:0:1:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.590162] scsi host8: waking up host to restart
+Mar  5 15:11:36 ixolite kernel: [  728.590171] sr 8:0:0:0: tag#0 Send: scmd 0x00000000dacca97a
+Mar  5 15:11:36 ixolite kernel: [  728.590175] sr 8:0:1:0: [sr4] sr_check_events: scsi_status_is_good(ret)=0, scsi_sense_valid(&sshdr)=1, sshdr.asc=0x3a
+Mar  5 15:11:36 ixolite kernel: [  728.590176] sr 8:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.590211] sr 8:0:1:0: [sr4] sr_block_open start pid=1227 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.590215] sr 8:0:1:0: [sr4] sr_block_open autopm_get_device start
+Mar  5 15:11:36 ixolite kernel: [  728.590220] sr 8:0:1:0: [sr4] sr_block_open autopm_get_device stop
+Mar  5 15:11:36 ixolite kernel: [  728.590222] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:36 ixolite kernel: [  728.590225] sr 8:0:1:0: [sr4] sr_block_open check_disk_change start
+Mar  5 15:11:36 ixolite kernel: [  728.590228] [sr4] check_disk_change: disk_clear_events start
+Mar  5 15:11:36 ixolite kernel: [  728.591083] sr 8:0:0:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:36 ixolite kernel: [  728.591087] sr 8:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.591091] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.591094] sr 8:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:36 ixolite kernel: [  728.591097] sr 8:0:0:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.591130] sr 8:0:0:0: tag#0 Send: scmd 0x00000000f39fbfd4
+Mar  5 15:11:36 ixolite kernel: [  728.591135] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.591509] sr 8:0:0:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:36 ixolite kernel: [  728.591513] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.591517] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.591524] sr 8:0:0:0: tag#0 abort scheduled
+Mar  5 15:11:36 ixolite kernel: [  728.601753] sr 8:0:0:0: tag#0 aborting command
+Mar  5 15:11:36 ixolite kernel: [  728.601757] sr 8:0:0:0: tag#0 cmd abort failed
+Mar  5 15:11:36 ixolite kernel: [  728.621752] scsi host8: Waking error handler thread
+Mar  5 15:11:36 ixolite kernel: [  728.621758] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:36 ixolite kernel: [  728.622431] sr 8:0:0:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:36 ixolite kernel: [  728.622435] sr 8:0:0:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:36 ixolite kernel: [  728.622438] sr 8:0:0:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.622454] scsi host8: waking up host to restart
+Mar  5 15:11:36 ixolite kernel: [  728.622462] sr 8:0:0:0: [sr3] sr_check_events: scsi_status_is_good(ret)=0, scsi_sense_valid(&sshdr)=1, sshdr.asc=0x3a
+Mar  5 15:11:36 ixolite kernel: [  728.622464] sr 8:0:1:0: tag#0 Send: scmd 0x0000000040e22991
+Mar  5 15:11:36 ixolite kernel: [  728.622469] [sr3] check_disk_change: disk_clear_events stop (events&=0x0)
+Mar  5 15:11:36 ixolite kernel: [  728.622471] sr 8:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.622475] sr 8:0:0:0: [sr3] sr_block_open check_disk_change stop
+Mar  5 15:11:36 ixolite kernel: [  728.622478] sr 8:0:0:0: [sr3] sr_block_open mutex_lock start
+Mar  5 15:11:36 ixolite kernel: [  728.622481] sr 8:0:0:0: [sr3] sr_block_open mutex_lock stop
+Mar  5 15:11:36 ixolite kernel: [  728.622484] sr 8:0:0:0: [sr3] sr_block_open cdrom_open start
+Mar  5 15:11:36 ixolite kernel: [  728.622488] sr 8:0:0:0: [sr3] sr_block_open cdrom_open stop
+Mar  5 15:11:36 ixolite kernel: [  728.622491] sr 8:0:0:0: [sr3] sr_block_open mutex_unlock start
+Mar  5 15:11:36 ixolite kernel: [  728.622494] sr 8:0:0:0: [sr3] sr_block_open mutex_unlock stop
+Mar  5 15:11:36 ixolite kernel: [  728.622497] sr 8:0:0:0: [sr3] sr_block_open scsi_autopm_put_device start
+Mar  5 15:11:36 ixolite kernel: [  728.622500] sr 8:0:0:0: [sr3] sr_block_open scsi_autopm_put_device stop
+Mar  5 15:11:36 ixolite kernel: [  728.622504] sr 8:0:0:0: [sr3] sr_block_open stop pid=1225 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.622515] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:36 ixolite kernel: [  728.622743] sr 8:0:0:0: [sr3] sr_block_compat_ioctl start pid=1225 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.622746] sr 8:0:0:0: [sr3] sr_block_compat_ioctl mutex_lock start
+Mar  5 15:11:36 ixolite kernel: [  728.622749] sr 8:0:0:0: [sr3] sr_block_compat_ioctl mutex_lock stop
+Mar  5 15:11:36 ixolite kernel: [  728.622753] scsi_cmd_ioctl: sr3 close tray start pid=1225 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.622800] sr 8:0:1:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:36 ixolite kernel: [  728.622811] sr 8:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.622816] sr 8:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.622821] sr 8:0:1:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:36 ixolite kernel: [  728.622832] sr 8:0:1:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.622878] sr 8:0:1:0: tag#0 Send: scmd 0x00000000c5db4fc8
+Mar  5 15:11:36 ixolite kernel: [  728.622882] sr 8:0:1:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.623075] sr 8:0:1:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:36 ixolite kernel: [  728.623078] sr 8:0:1:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:36 ixolite kernel: [  728.623082] sr 8:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.623085] sr 8:0:1:0: tag#0 abort scheduled
+Mar  5 15:11:36 ixolite kernel: [  728.633743] sr 8:0:1:0: tag#0 aborting command
+Mar  5 15:11:36 ixolite kernel: [  728.633747] sr 8:0:1:0: tag#0 cmd abort failed
+Mar  5 15:11:36 ixolite kernel: [  728.653754] scsi host8: Waking error handler thread
+Mar  5 15:11:36 ixolite kernel: [  728.653761] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:36 ixolite kernel: [  728.654153] sr 8:0:1:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:36 ixolite kernel: [  728.654157] sr 8:0:1:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:36 ixolite kernel: [  728.654161] sr 8:0:1:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:36 ixolite kernel: [  728.654174] scsi host8: waking up host to restart
+Mar  5 15:11:36 ixolite kernel: [  728.654180] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:36 ixolite kernel: [  728.654188] sr 8:0:1:0: [sr4] sr_check_events: scsi_status_is_good(ret)=0, scsi_sense_valid(&sshdr)=1, sshdr.asc=0x3a
+Mar  5 15:11:36 ixolite kernel: [  728.654200] sr 8:0:0:0: [sr3] tag#0 Send: scmd 0x00000000dacca97a
+Mar  5 15:11:36 ixolite kernel: [  728.654209] sr 8:0:0:0: [sr3] tag#0 CDB: Start/Stop Unit 1b 00 00 00 03 00
+Mar  5 15:11:36 ixolite kernel: [  728.654293] [sr4] check_disk_change: disk_clear_events stop (events&=0x0)
+Mar  5 15:11:36 ixolite kernel: [  728.654297] sr 8:0:1:0: [sr4] sr_block_open check_disk_change stop
+Mar  5 15:11:36 ixolite kernel: [  728.654300] sr 8:0:1:0: [sr4] sr_block_open mutex_lock start
+Mar  5 15:11:36 ixolite kernel: [  728.654303] sr 8:0:1:0: [sr4] sr_block_open mutex_lock stop
+Mar  5 15:11:36 ixolite kernel: [  728.654306] sr 8:0:1:0: [sr4] sr_block_open cdrom_open start
+Mar  5 15:11:36 ixolite kernel: [  728.654310] sr 8:0:1:0: [sr4] sr_block_open cdrom_open stop
+Mar  5 15:11:36 ixolite kernel: [  728.654313] sr 8:0:1:0: [sr4] sr_block_open mutex_unlock start
+Mar  5 15:11:36 ixolite kernel: [  728.654316] sr 8:0:1:0: [sr4] sr_block_open mutex_unlock stop
+Mar  5 15:11:36 ixolite kernel: [  728.654319] sr 8:0:1:0: [sr4] sr_block_open scsi_autopm_put_device start
+Mar  5 15:11:36 ixolite kernel: [  728.654322] sr 8:0:1:0: [sr4] sr_block_open scsi_autopm_put_device stop
+Mar  5 15:11:36 ixolite kernel: [  728.654325] sr 8:0:1:0: [sr4] sr_block_open stop pid=1227 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.654565] sr 8:0:1:0: [sr4] sr_block_compat_ioctl start pid=1227 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.654568] sr 8:0:1:0: [sr4] sr_block_compat_ioctl mutex_lock start
+Mar  5 15:11:36 ixolite kernel: [  728.654572] sr 8:0:1:0: [sr4] sr_block_compat_ioctl mutex_lock stop
+Mar  5 15:11:36 ixolite kernel: [  728.654576] scsi_cmd_ioctl: sr4 close tray start pid=1227 comm=python3
+Mar  5 15:11:36 ixolite kernel: [  728.901805] sr 7:0:0:0: tag#1 Send: scmd 0x00000000b4448a75
+Mar  5 15:11:36 ixolite kernel: [  728.901810] sr 7:0:0:0: tag#1 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.908815] sr 7:0:0:0: tag#1 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:36 ixolite kernel: [  728.908834] sr 7:0:0:0: tag#1 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:36 ixolite kernel: [  728.908844] sr 7:0:0:0: tag#1 scsi host busy 1 failed 0
+Mar  5 15:11:36 ixolite kernel: [  728.908849] sr 7:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:36 ixolite kernel: [  728.908853] sr 7:0:0:0: tag#1 0 sectors total, 8 bytes done.
+Mar  5 15:11:37 ixolite kernel: [  729.706325] sr 8:0:0:0: [sr3] tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=1s
+Mar  5 15:11:37 ixolite kernel: [  729.706343] sr 8:0:0:0: [sr3] tag#0 CDB: Start/Stop Unit 1b 00 00 00 03 00
+Mar  5 15:11:37 ixolite kernel: [  729.706354] sr 8:0:0:0: [sr3] tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:37 ixolite kernel: [  729.706360] sr 8:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:37 ixolite kernel: [  729.706365] sr 8:0:0:0: [sr3] tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:37 ixolite kernel: [  729.706456] scsi_cmd_ioctl: sr3 close tray stop pid=1225 comm=python3 err=0x0
+Mar  5 15:11:37 ixolite kernel: [  729.706461] sr 8:0:0:0: [sr3] sr_block_compat_ioctl mutex_unlock start
+Mar  5 15:11:37 ixolite kernel: [  729.706464] sr 8:0:0:0: [sr3] sr_block_compat_ioctl mutex_unlock stop
+Mar  5 15:11:37 ixolite kernel: [  729.706468] sr 8:0:0:0: [sr3] sr_block_compat_ioctl stop pid=1225 comm=python3
+Mar  5 15:11:37 ixolite kernel: [  729.706485] sr 8:0:1:0: [sr4] tag#0 Send: scmd 0x0000000040e22991
+Mar  5 15:11:37 ixolite kernel: [  729.706489] sr 8:0:1:0: [sr4] tag#0 CDB: Start/Stop Unit 1b 00 00 00 03 00
+Mar  5 15:11:37 ixolite kernel: [  729.706805] [sr3] blkdev_put: disk_flush_events start
+Mar  5 15:11:37 ixolite kernel: [  729.706813] [sr3] blkdev_put: disk_flush_events stop
+Mar  5 15:11:37 ixolite kernel: [  729.706815] [sr3] blkdev_put: __blkdev_put start
+Mar  5 15:11:37 ixolite kernel: [  729.706822] sr 8:0:0:0: [sr3] sr_block_release start pid=1225 comm=python3
+Mar  5 15:11:37 ixolite kernel: [  729.706825] sr 8:0:0:0: [sr3] sr_block_release mutex_lock start
+Mar  5 15:11:37 ixolite kernel: [  729.706828] sr 8:0:0:0: [sr3] sr_block_release mutex_lock stop
+Mar  5 15:11:37 ixolite kernel: [  729.706831] sr 8:0:0:0: [sr3] sr_block_release cdrom_release start
+Mar  5 15:11:37 ixolite kernel: [  729.706834] cdrom: cdrom_release: sr3 pid=1225 unlocking door (start)
+Mar  5 15:11:37 ixolite kernel: [  729.706838] sr 8:0:0:0: [sr3] sr_lock_door: start (unlock)
+Mar  5 15:11:37 ixolite kernel: [  729.706841] sr 8:0:0:0: Trying ioctl with scsi command 30
+Mar  5 15:11:37 ixolite kernel: [  729.765857] sr 1:0:0:0: tag#0 Send: scmd 0x00000000b689853a
+Mar  5 15:11:37 ixolite kernel: [  729.765862] sr 1:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:37 ixolite kernel: [  729.766198] sr 1:0:0:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:37 ixolite kernel: [  729.766212] sr 1:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:37 ixolite kernel: [  729.766220] sr 1:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:37 ixolite kernel: [  729.766231] sr 1:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:37 ixolite kernel: [  729.766237] sr 1:0:0:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:37 ixolite kernel: [  729.797845] sr 1:0:1:0: tag#0 Send: scmd 0x00000000f8e132d4
+Mar  5 15:11:37 ixolite kernel: [  729.797850] sr 1:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:37 ixolite kernel: [  729.798200] sr 1:0:1:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:37 ixolite kernel: [  729.798209] sr 1:0:1:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:37 ixolite kernel: [  729.798216] sr 1:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:37 ixolite kernel: [  729.798225] sr 1:0:1:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:37 ixolite kernel: [  729.798233] sr 1:0:1:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:38 ixolite kernel: [  730.917923] sr 7:0:0:0: tag#13 Send: scmd 0x000000006026fcc6
+Mar  5 15:11:38 ixolite kernel: [  730.917928] sr 7:0:0:0: tag#13 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:38 ixolite kernel: [  730.924956] sr 7:0:0:0: tag#13 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:38 ixolite kernel: [  730.924980] sr 7:0:0:0: tag#13 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:38 ixolite kernel: [  730.924991] sr 7:0:0:0: tag#13 scsi host busy 1 failed 0
+Mar  5 15:11:38 ixolite kernel: [  730.925006] sr 7:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:38 ixolite kernel: [  730.925015] sr 7:0:0:0: tag#13 0 sectors total, 8 bytes done.
+Mar  5 15:11:39 ixolite kernel: [  731.139775] sr 8:0:1:0: [sr4] tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=2s
+Mar  5 15:11:39 ixolite kernel: [  731.139802] sr 8:0:1:0: [sr4] tag#0 CDB: Start/Stop Unit 1b 00 00 00 03 00
+Mar  5 15:11:39 ixolite kernel: [  731.139809] sr 8:0:1:0: [sr4] tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:39 ixolite kernel: [  731.139816] sr 8:0:1:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:39 ixolite kernel: [  731.139822] sr 8:0:1:0: [sr4] tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:39 ixolite kernel: [  731.139869] scsi_cmd_ioctl: sr4 close tray stop pid=1227 comm=python3 err=0x0
+Mar  5 15:11:39 ixolite kernel: [  731.139877] sr 8:0:1:0: [sr4] sr_block_compat_ioctl mutex_unlock start
+Mar  5 15:11:39 ixolite kernel: [  731.139880] sr 8:0:1:0: [sr4] sr_block_compat_ioctl mutex_unlock stop
+Mar  5 15:11:39 ixolite kernel: [  731.139885] sr 8:0:1:0: [sr4] sr_block_compat_ioctl stop pid=1227 comm=python3
+Mar  5 15:11:39 ixolite kernel: [  731.140159] [sr4] blkdev_put: disk_flush_events start
+Mar  5 15:11:39 ixolite kernel: [  731.140163] [sr4] blkdev_put: disk_flush_events stop
+Mar  5 15:11:39 ixolite kernel: [  731.140165] [sr4] blkdev_put: __blkdev_put start
+Mar  5 15:11:39 ixolite kernel: [  731.140172] sr 8:0:1:0: [sr4] sr_block_release start pid=1227 comm=python3
+Mar  5 15:11:39 ixolite kernel: [  731.140175] sr 8:0:1:0: [sr4] sr_block_release mutex_lock start
+Mar  5 15:11:39 ixolite kernel: [  731.140178] sr 8:0:1:0: [sr4] sr_block_release mutex_lock stop
+Mar  5 15:11:39 ixolite kernel: [  731.140181] sr 8:0:1:0: [sr4] sr_block_release cdrom_release start
+Mar  5 15:11:39 ixolite kernel: [  731.140183] cdrom: cdrom_release: sr4 pid=1227 unlocking door (start)
+Mar  5 15:11:39 ixolite kernel: [  731.140187] sr 8:0:1:0: [sr4] sr_lock_door: start (unlock)
+Mar  5 15:11:39 ixolite kernel: [  731.140191] sr 8:0:1:0: Trying ioctl with scsi command 30
+Mar  5 15:11:39 ixolite kernel: [  731.140208] sr 8:0:1:0: tag#0 Send: scmd 0x0000000040e22991
+Mar  5 15:11:39 ixolite kernel: [  731.140213] sr 8:0:1:0: tag#0 CDB: Prevent/Allow Medium Removal 1e 00 00 00 00 00
+Mar  5 15:11:39 ixolite kernel: [  731.140977] sr 8:0:1:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:39 ixolite kernel: [  731.140982] sr 8:0:1:0: tag#0 CDB: Prevent/Allow Medium Removal 1e 00 00 00 00 00
+Mar  5 15:11:39 ixolite kernel: [  731.140986] sr 8:0:1:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:39 ixolite kernel: [  731.140990] sr 8:0:1:0: tag#0 abort scheduled
+Mar  5 15:11:39 ixolite kernel: [  731.149937] sr 8:0:1:0: tag#0 aborting command
+Mar  5 15:11:39 ixolite kernel: [  731.149941] sr 8:0:1:0: tag#0 cmd abort failed
+Mar  5 15:11:39 ixolite kernel: [  731.173909] scsi host8: Waking error handler thread
+Mar  5 15:11:39 ixolite kernel: [  731.173918] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:39 ixolite kernel: [  731.660897] sr 8:0:1:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:39 ixolite kernel: [  731.660903] sr 8:0:1:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:39 ixolite kernel: [  731.660908] sr 8:0:1:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:39 ixolite kernel: [  731.660934] scsi host8: waking up host to restart
+Mar  5 15:11:39 ixolite kernel: [  731.660948] sr 8:0:1:0: Ioctl returned  0x8000002
+Mar  5 15:11:39 ixolite kernel: [  731.660950] sr 8:0:0:0: tag#0 Send: scmd 0x00000000dacca97a
+Mar  5 15:11:39 ixolite kernel: [  731.660955] sr 8:0:1:0: IOCTL Releasing command
+Mar  5 15:11:39 ixolite kernel: [  731.660957] sr 8:0:0:0: tag#0 CDB: Prevent/Allow Medium Removal 1e 00 00 00 00 00
+Mar  5 15:11:39 ixolite kernel: [  731.660963] sr 8:0:1:0: [sr4] sr_lock_door: stop (unlock) ret=0x8000002
+Mar  5 15:11:39 ixolite kernel: [  731.660966] cdrom: cdrom_release: sr4 pid=1227 unlocking door (stop)
+Mar  5 15:11:39 ixolite kernel: [  731.660970] sr 8:0:1:0: [sr4] sr_block_release cdrom_release stop
+Mar  5 15:11:39 ixolite kernel: [  731.660973] sr 8:0:1:0: [sr4] sr_block_release mutex_unlock start
+Mar  5 15:11:39 ixolite kernel: [  731.660976] sr 8:0:1:0: [sr4] sr_block_release mutex_unlock stop
+Mar  5 15:11:39 ixolite kernel: [  731.660980] sr 8:0:1:0: [sr4] sr_block_release stop pid=1227 comm=python3
+Mar  5 15:11:39 ixolite kernel: [  731.660986] [(efault)] blkdev_put: __blkdev_put stop
+Mar  5 15:11:39 ixolite kernel: [  731.661008] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:39 ixolite kernel: [  731.661386] sr 8:0:0:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=1s
+Mar  5 15:11:39 ixolite kernel: [  731.661393] sr 8:0:0:0: tag#0 CDB: Prevent/Allow Medium Removal 1e 00 00 00 00 00
+Mar  5 15:11:39 ixolite kernel: [  731.661398] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:39 ixolite kernel: [  731.661401] sr 8:0:0:0: tag#0 abort scheduled
+Mar  5 15:11:39 ixolite kernel: [  731.669960] sr 8:0:0:0: tag#0 aborting command
+Mar  5 15:11:39 ixolite kernel: [  731.669966] sr 8:0:0:0: tag#0 cmd abort failed
+Mar  5 15:11:39 ixolite kernel: [  731.705945] scsi host8: Waking error handler thread
+Mar  5 15:11:39 ixolite kernel: [  731.705954] scsi host8: scsi_eh_8: waking up 0/1/1
+Mar  5 15:11:39 ixolite kernel: [  731.706838] sr 8:0:0:0: tag#0 scsi_eh_8: flush finish cmd
+Mar  5 15:11:39 ixolite kernel: [  731.706843] sr 8:0:0:0: Notifying upper driver of completion (result 8000002)
+Mar  5 15:11:39 ixolite kernel: [  731.706847] sr 8:0:0:0: tag#0 0 sectors total, 0 bytes done.
+Mar  5 15:11:39 ixolite kernel: [  731.706870] scsi host8: waking up host to restart
+Mar  5 15:11:39 ixolite kernel: [  731.706882] sr 8:0:0:0: tag#0 Send: scmd 0x00000000f39fbfd4
+Mar  5 15:11:39 ixolite kernel: [  731.706888] sr 8:0:0:0: Ioctl returned  0x8000002
+Mar  5 15:11:39 ixolite kernel: [  731.706890] sr 8:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:39 ixolite kernel: [  731.706894] sr 8:0:0:0: IOCTL Releasing command
+Mar  5 15:11:39 ixolite kernel: [  731.706900] sr 8:0:0:0: [sr3] sr_lock_door: stop (unlock) ret=0x8000002
+Mar  5 15:11:39 ixolite kernel: [  731.706902] cdrom: cdrom_release: sr3 pid=1225 unlocking door (stop)
+Mar  5 15:11:39 ixolite kernel: [  731.706906] sr 8:0:0:0: [sr3] sr_block_release cdrom_release stop
+Mar  5 15:11:39 ixolite kernel: [  731.706909] sr 8:0:0:0: [sr3] sr_block_release mutex_unlock start
+Mar  5 15:11:39 ixolite kernel: [  731.706912] sr 8:0:0:0: [sr3] sr_block_release mutex_unlock stop
+Mar  5 15:11:39 ixolite kernel: [  731.706916] sr 8:0:0:0: [sr3] sr_block_release stop pid=1225 comm=python3
+Mar  5 15:11:39 ixolite kernel: [  731.706933] [(efault)] blkdev_put: __blkdev_put stop
+Mar  5 15:11:39 ixolite kernel: [  731.706938] scsi host8: scsi_eh_8: sleeping
+Mar  5 15:11:39 ixolite kernel: [  731.707992] sr 8:0:0:0: tag#0 Done: SUCCESS Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=2s
+Mar  5 15:11:39 ixolite kernel: [  731.707999] sr 8:0:0:0: tag#0 CDB: Get event status notification 4a 01 00 00 10 00 00 00 08 00
+Mar  5 15:11:39 ixolite kernel: [  731.708004] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:39 ixolite kernel: [  731.708008] sr 8:0:0:0: Notifying upper driver of completion (result 0)
+Mar  5 15:11:39 ixolite kernel: [  731.708012] sr 8:0:0:0: tag#0 0 sectors total, 8 bytes done.
+Mar  5 15:11:39 ixolite kernel: [  731.708058] sr 8:0:0:0: tag#0 Send: scmd 0x00000000dacca97a
+Mar  5 15:11:39 ixolite kernel: [  731.708063] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:39 ixolite kernel: [  731.708454] sr 8:0:0:0: tag#0 Done: TIMEOUT_ERROR Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+Mar  5 15:11:39 ixolite kernel: [  731.708459] sr 8:0:0:0: tag#0 CDB: Test Unit Ready 00 00 00 00 00 00
+Mar  5 15:11:39 ixolite kernel: [  731.708463] sr 8:0:0:0: tag#0 scsi host busy 1 failed 0
+Mar  5 15:11:39 ixolite kernel: [  731.708467] sr 8:0:0:0: tag#0 abort scheduled
+Mar  5 15:11:39 ixolite kernel: [  731.717949] sr 8:0:0:0: tag#0 aborting command
+Mar  5 15:11:39 ixolite kernel: [  731.717954] sr 8:0:0:0: tag#0 cmd abort failed
+Mar  5 15:11:39 ixolite kernel: [  731.750780] sr 8:0:0:0: [sr3] sr_check_events: scsi_status_is_good(ret)=0, scsi_sense_valid(&sshdr)=1, sshdr.asc=0x4
+Mar  5 15:11:39 ixolite kernel: [  731.750787] sr 8:0:0:0: [sr3] sr_check_events: last_present (0) != cd->media_present (1), set cd->device->changed = 1
+Mar  5 15:11:39 ixolite kernel: [  731.750791] sr 8:0:0:0: [sr3] sr_check_events: cd->device->changed, set DISK_EVENT_MEDIA_CHANGE
+Mar  5 15:11:39 ixolite kernel: [  731.786416] sr 8:0:1:0: [sr4] sr_check_events: scsi_status_is_good(ret)=0, scsi_sense_valid(&sshdr)=1, sshdr.asc=0x4
+Mar  5 15:11:39 ixolite kernel: [  731.786422] sr 8:0:1:0: [sr4] sr_check_events: last_present (0) != cd->media_present (1), set cd->device->changed = 1
+Mar  5 15:11:39 ixolite kernel: [  731.786426] sr 8:0:1:0: [sr4] sr_check_events: cd->device->changed, set DISK_EVENT_MEDIA_CHANGE
